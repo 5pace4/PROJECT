@@ -105,7 +105,7 @@
 
     </section>
 
-
+ <!--load-more-section start-->
     <div class = "load-more-container slider-container">
         <h1 class = "heading">More posts</h1>
 
@@ -231,8 +231,23 @@
                 </div>
             </div>
             
-        </div>        
+        </div> 
+        <div id="load-more">load more</div>       
     </div>
+    <script>
+        let loadMoreBtn = document.querySelector('#load-more');
+        let currentItem = 3;
+        loadMoreBtn.onclick = () =>{
+           let boxes = [...document.querySelectorAll('.load-more-container .load-more-box-container .load-more-box')];
+           for(var i = currentItem; i < currentItem + 3; i++) {
+            // boxes[i-1].style.display = 'none';
+            boxes[i].style.display = 'inline-block';
+           }
+           currentItem+=3;
+        }
+    </script>
+<!--load-more-section end-->
+
 <!--banner end here-->
 
 <!--start footer section-->
